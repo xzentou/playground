@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 48.14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ed1c24;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        fill: #f15a29;
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        font-family: NovaSquare, 'Nova Square';
+        font-size: 33.57px;
+      }
+
+      .cls-2 {
+        fill: #ef4136;
+      }
+
+      .cls-3, .cls-6 {
+        fill: #27aae1;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" x=".01" y=".11" width="70.26" height="6.39" transform="translate(-.01 .11) rotate(-.18)"/>
+  <rect class="cls-3" x=".08" y="21.08" width="39.21" height="6.56" transform="translate(-.08 .06) rotate(-.18)"/>
+  <rect class="cls-3" x="-17.14" y="23.77" width="41.53" height="7.19" transform="translate(-23.74 30.98) rotate(-90)"/>
+  <rect class="cls-2" x="45.77" y="23.62" width="24.5" height="6.56"/>
+  <rect class="cls-2" x="54.74" y="32.59" width="24.5" height="6.56" transform="translate(31.12 102.86) rotate(-90)"/>
+  <rect class="cls-1" x="15.18" y="23.98" width="41.72" height="6.56" transform="translate(9.01 63.47) rotate(-90.38)"/>
+  <rect class="cls-1" x="36.05" y="41.53" width="21.97" height="6.56" transform="translate(-.14 .15) rotate(-.18)"/>
+  <text class="cls-5" transform="translate(73.66 35.87)"><tspan class="cls-6" x="0" y="0">Play</tspan><tspan class="cls-4" x="68.52" y="0">Ground</tspan></text>
+</svg>
