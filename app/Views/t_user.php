@@ -10,7 +10,7 @@
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                 <img src="<?=base_url('img/logosvg.svg')?>" width="180" alt="" /> 
                 </a>
-                <img src="<?=base_url('images/logos/dark-logo.svg')?>" width="180" alt="">
+                <!-- <img src="<?=base_url('images/logos/dark-logo.svg')?>" width="180" alt=""> -->
                 <form action="<?= base_url('home/aksi_tuser') ?>" method="POST" enctype="multipart/form-data">
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Name</label>

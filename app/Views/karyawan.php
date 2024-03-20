@@ -19,7 +19,7 @@
         <div class="card-body">
         
         
-          <a href="<?= base_url('home/t_user/') ?>" >
+          <a href="<?= base_url('home/t_karyawan/') ?>" >
     <button class="btn btn-primary btn-square" id="animated-button"><i class="ri-add-circle-fill "> </i>Tambah</button>
     </a>
         

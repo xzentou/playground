@@ -833,7 +833,7 @@ class Home extends BaseController
 			$model->tambahwaktu($noTrans, $tambahwaktu);
 
 			// Kirim respons (jika diperlukan)
-			return "Status transaksi berhasil diubah menjadi habis";
+			return redirect()->to('home/tambahwaktu');
 		} else {
 			// Handle conversion failure
 			return "Error: One or both values are not in the correct time format.";
@@ -981,7 +981,7 @@ class Home extends BaseController
 			'username' => $leo,
 			'password' => md5($gtw),
 			'email' => $gtww,
-			'level' => 4,
+			'level' => 3,
 			'foto' => $foto,
 
 		);
@@ -1201,6 +1201,84 @@ class Home extends BaseController
 		// Kirim respons (jika diperlukan)
 		return redirect()->to('home/karyawan');
 	}
+
+	public function t_karyawan()
+	{
+		if (session()->get('level') > 0) {
+			$model = new M_pg();
+			$where = array('id_user' => session()->get('id'));
+			$data['satu'] = $model->getwhere('user', $where);
+			$data['agama'] = $model->tampil('agama');
+			echo view('header');
+			echo view('menu', $data);
+			echo view('t_karyawan', $data);
+			echo view('footer');
+		} else {
+			return redirect()->to('Home/login');
+		}
+	}
+
+	public function aksi_t_karyawan()
+	{
+		$model = new M_pg();
+		$uploadedFile = $this->request->getfile('gambar');
+		$ab = $this->request->getPost('nama');
+		$bc = $this->request->getPost('alamat');
+		$cd = $this->request->getPost('jk');
+		$ef = $this->request->getPost('nohp');
+		$fg = $this->request->getPost('agama');
+		$gh = $this->request->getPost('tgl');
+		$hi = $this->request->getPost('nik');
+		$ij = $this->request->getPost('email');
+		$id = $this->request->getPost('id');
+
+		$model = new M_pg;
+
+
+		if ($uploadedFile->getName()) {
+			$foto = $uploadedFile->getName();
+			$model->upload($uploadedFile);
+			
+
+			$isi = array(
+				'foto' => $foto,
+				'username' => $ab,
+				'alamat' => $bc,
+				'jk' => $cd,
+				'nohp' => $ef,
+				'id_agama' => $fg,
+				'email' => $ij,
+				'delete' => '0',
+				'update_by' => session()->get('id'),
+				'update_at' => date('y,m,d,h,m,s'),
+
+			);
+		} else {
+			
+
+			$isi = array(
+
+				'username' => $ab,
+				'alamat' => $bc,
+				'jk' => $cd,
+				'nohp' => $ef,
+				'id_agama' => $fg,
+				'email' => $ij,
+				'delete'=>'0',
+				'update_by' => session()->get('id'),
+				'update_at' => date('y,m,d,h,m,s'),
+			);
+		}
+
+
+		$model->tambah('user', $isi);
+
+		return redirect()->to('Home/karyawan');
+		// print_r($isi);
+
+
+	}
+
 
 	public function hapus_profile($id)
 	{

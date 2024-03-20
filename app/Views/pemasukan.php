@@ -9,7 +9,7 @@
                         <input type="date" id="mulai" class="form-control">
                         <label for="endDate" class="form-label">Sampai Dengan</label>
                         <input type="date" id="akhir" class="form-control">
-                        <button id="generatePdf" class="btn btn-primary">Generate PDF</button>
+                        <button id="generatePdf" class="btn btn-primary">Print PDF</button>
                     </div>
                     <div class="col-md-12">
                         <div class="card shadow mb-4">

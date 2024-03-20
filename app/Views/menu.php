@@ -20,12 +20,14 @@
               <span class="hide-menu">Home</span>
             </li>
            <li class="sidebar-item">
+           
     <a class="sidebar-link" href="<?= base_url('home/') ?>" aria-expanded="false">
         <span>
             <i class="ti ti-home"></i>
         </span>
         <span class="hide-menu">Dashboard</span>
     </a>
+    <?php if(session()->get('level')==1 || session()->get('level')== 3) { ?>
     <a class="sidebar-link" href="<?= base_url('home/pelanggan') ?>" aria-expanded="false">
         <span>
             <i class="ti ti-man"></i>
@@ -44,7 +46,9 @@
         </span>
         <span class="hide-menu">Daftar Durasi</span>
     </a>
+    <?php } ?>
 
+    <?php if(session()->get('level')==1 || session()->get('level')== 2) { ?>
     <a class="sidebar-link" data-bs-target="#forms-na" data-bs-toggle="collapse" href="#">
           <i class="ti ti-report"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -59,7 +63,7 @@
 
           </li>
         </ul>
-
+    
     <a class="sidebar-link" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="ti ti-folder"></i><span>Table</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -87,7 +91,7 @@
             </a>
           </li>
         </ul>
-    
+        
         <a class="sidebar-link" data-bs-target="#forms-navv" data-bs-toggle="collapse" href="#">
           <i class="ti ti-trash-x"></i><span>Recycle bin</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -97,18 +101,18 @@
             <span>
             <i class="ti ti-album"></i>
             </span>
-              <span style="color:black;">Daftar Pelanggan Habis</span>
+              <span style="color:black;">Pelanggan</span>
             </a>
 
             <a class="sidebar-link" href="<?= base_url('home/rpaket') ?>">
             <span>
-            <i class="ti ti-mood-boy"></i>
+            <i class="ti ti-album"></i>
             </span>
               <span style="color:black;">Paket</span>
 
               <a class="sidebar-link" href="<?= base_url('home/rkaryawan') ?>">
             <span>
-            <i class="ti ti-mood-boy"></i>
+            <i class="ti ti-user-circle"></i>
             </span>
               <span style="color:black;">Karyawan</span>
 
@@ -118,7 +122,7 @@
             </span>
               <span style="color:black;">Anak</span>
             </a>
-
+            <?php } ?>
             
           </li>
         </ul>
@@ -246,13 +250,9 @@
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
-                    <a href="<?=BASE_URL('home/account'. $satu->id_user)?>" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="<?=BASE_URL('home/account/'. $satu->id_user)?>" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-mail fs-6"></i>
                       <p class="mb-0 fs-3">My Account</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
                     </a>
                     <a href="<?=base_url('home/logout')?>" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>

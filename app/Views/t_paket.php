@@ -21,7 +21,9 @@
     <input type="text" class="form-control" id="durasi" name="durasi" pattern="[0-9]{2}:[0-9]{2}:[0-9]{2}">
     <small>Format: HH:MM:SS (contoh: 12:34:56)</small>
 </div>
+<div>
     <button type="submit" class="btn btn-primary">Tambah</button>
+    </div>
 </form>
 
 

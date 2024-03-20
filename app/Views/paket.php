@@ -28,15 +28,18 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
-                <th scope="col">Sampai</th>
+                <th scope="col">Durasi</th>
+                <th scope="col">Harga</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
            <tbody>
 <?php 
+$no = 1;
 foreach ($dua as $key) {
 ?>
     <tr>
+        <td><?= $no++ ?></td>
         <td><?= $key->nama_Paket ?></td>
         <td><?= $key->durasi ?></td>
         <td><?= $key->harga ?></td>

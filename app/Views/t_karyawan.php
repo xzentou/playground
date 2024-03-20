@@ -1,7 +1,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Profile</h1>
+      <h1>Form</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -17,8 +17,8 @@
 
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-            <img class="rounded-circle" style="width: 150px; height: 150px;" src="<?= base_url('img/'.$satu->foto)?>" alt="Profile">
-              <h2 style="text-align: center;"><?=$satu->username?></h2>
+
+              <h2 style="text-align: center;"></h2>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -55,19 +55,17 @@
                 <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form action="<?=base_url('home/aksi_profile')?>" method="post" enctype="multipart/form-data">
+                  <form action="<?=base_url('home/aksi_t_karyawan')?>" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label"></label>
-                      <div class="col-md-8 col-lg-9">
-    <img class="rounded-circle" style="width: 150px; height: 150px;" src="<?= base_url('img/'.$satu->foto)?>" alt="Profile">
-</div>
+                     
                     </div>
                         
                 <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">foto</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="gambar" type="file" class="form-control" 
-                        value="<?= $satu->foto ?>" >
+                        <input name="gambar" type="file" class="form-control" id="nama_kry" 
+                        >
                       </div>
                     </div>
                   </div>
@@ -75,16 +73,16 @@
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nama</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="nama" type="text" class="form-control"  
-                        value="<?= $satu->username ?>" >
+                        <input name="nama" type="text" class="form-control" id="nama_kry" 
+                        >
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">No Hp</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="nohp" type="text" class="form-control"  
-                        value="<?= $satu->nohp ?>" >
+                        <input name="nohp" type="text" class="form-control" id="nama_kry" 
+                         >
                       </div>
                     </div>
 
@@ -92,53 +90,50 @@
                       <label for="about" class="col-md-4 col-lg-3 col-form-label">Alamat</label>
                       <div class="col-md-8 col-lg-9">
                         <textarea name="alamat" class="form-control" id="alamat_kry"     
-                        style="height: 100px" ><?= $satu->alamat ?></textarea>
+                        style="height: 100px" ></textarea>
                         
                       </div>
                     </div>
 
                     <div class="row mb-3">
-    <label for="company" class="col-md-4 col-lg-3 col-form-label">Jenis Kelamin</label>
-    <div class="col-md-8 col-lg-9">
-        <select class="form-control" name="jk">
-            <option value="Laki-laki" <?php if ($satu->jk == 'Laki-laki') echo 'selected'; ?>>Laki-laki</option>
-            <option value="Perempuan" <?php if ($satu->jk == 'Perempuan') echo 'selected'; ?>>Perempuan</option>
+                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Jenis Kelamin</label>
+                      <div class="col-md-8 col-lg-9">
+                         <select class="form-control" name="jk" >
+          
+                         <option>pilih</option>
+            <option value="laki-laki">laki-laki</option>
+            <option value="perempuan">perempuan</option>
+          
+          
         </select>
-    </div>
-</div>
-
-
-
-
+                      </div>
+                    </div>
                     
                     <div class="row mb-3">
-    <label for="inputEmail3" class="col-md-4 col-lg-3 col-form-label">Agama</label>
-    <div class="col-md-8 col-lg-9">
-        <select class="form-control" name="agama">
-            <?php foreach ($agama as $key => $value) { ?>
-                <option value="<?= $value->id_agama ?>" <?= ($value->id_agama == $satu->id_agama) ? 'selected' : '' ?>>
-                    <?= $value->agama ?>
-                </option>
-            <?php } ?>
+                  <label for="inputEmail3" class="col-md-4 col-lg-3 col-form-label">Agama</label>
+                  <div class="col-md-8 col-lg-9">
+                   <select class="form-control" name="agama" >
+                   <option>pilih</option>
+          <?php foreach ($agama as $key => $value) {?>
+            <option value="<?= $value->id_agama?>"><?= $value->agama?></option>
+          <?php }?>
         </select>
-    </div>
-</div>
-
-                
+                  </div>
+                </div>
 
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="<?= $satu->email ?>" >
+                        <input name="email" type="email" class="form-control" id="Email" >
                       </div>
                     </div>
 
-                    <input type="hidden" name="id" value="<?=$satu->id_user ?>">
+                    
                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary">Tambah</button>
                        
-                         <a href="<?=base_url('home/hapus_profile/'.$satu->id_user)?>" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash">delete</i></a>
+                        
                 
                         
                     </div>

@@ -21,8 +21,9 @@
     <input type="text" class="form-control" id="durasi" name="umur">
 </div>
 
-    
+    <div>
     <button type="submit" class="btn btn-primary">Tambah</button>
+    </div>
 </form>
 
 

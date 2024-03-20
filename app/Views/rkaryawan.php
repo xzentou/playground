@@ -60,7 +60,7 @@ foreach ($dua as $key) {
 <script>
 function confirmDelete() {
 // Tampilkan konfirmasi
-var result = confirm("Apakah kamu yakin mau menghapus data pelanggan?");
+var result = confirm("Apakah kamu yakin mau restore data Karyawan?");
 
 // Jika pengguna menekan OK, return true (lanjutkan penghapusan)
 // Jika pengguna menekan Batal, return false (batalkan penghapusan)
